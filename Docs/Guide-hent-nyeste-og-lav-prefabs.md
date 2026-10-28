@@ -119,3 +119,13 @@ Fjender og boss virker nu som spilleren: **karakteren skifter mellem 4 billeder*
 Sæt jeres egne billeder ind i `Sprite Up / Down / Left / Right` på `EnemyAI` (og `BossAI`). Er et felt tomt, beholdes det nuværende billede, så man kan nøjes med fx kun venstre og højre.
 Karakter-sprites ligger i `Assets/Sprites/Generated/` (fx `Enemy_Shooter_Left.png`). Brug samme stil som spillerens grafik, så ser alle ens ud.
 Hunden har også et gevær-billede på sit våben-objekt (`Gun` under prefaben). Slå SpriteRenderer fra, hvis den ikke skal have noget i "hånden".
+
+## Drej fjenden i Scene-vinduet (nyt)
+
+Fjendens startretning er nu den vej, du **drejer objektet** (Z-rotation, eller Rotate-værktøjet i Scene-vinduet). Synskeglen (gul) i Scene-vinduet følger med, og i spillet kigger fjenden den vej fra start (0 = højre, 90 = op, 180 = venstre, 270 = ned).
+Når spillet starter, nulstilles selve rotationen, så grafikken ikke ligger skævt. `Start Facing Angle` er kun en ekstra drejning oveni og kan som regel stå på 0.
+
+## Switch-prefabs
+
+`Switch_Button` (tryk E, tænd/sluk), `Switch_Button_OneTime` (kan kun bruges én gang), `Switch_PressurePlate` (aktiv mens man står på den) og `Switch_PressurePlate_Stay` (bliver nede).
+Træk en dør ind i `On Activated` i Inspector og vælg fx `Door.Open` (og `Door.Close` i `On Deactivated`). Bruges med `Door_Switch`.
