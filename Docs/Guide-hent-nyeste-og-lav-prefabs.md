@@ -88,3 +88,10 @@ Hver type skal bruge **sit eget WeaponData-asset** (Create -> Top Down -> Weapon
 - **Intet sker ved skud** -> Tag `Enemy`/`Player` mangler, eller kuglen har ingen `Bullet Prefab` i WeaponData.
 - **Ingen point** -> der mangler en `ScoreManager` i scenen, eller `Score On Death` er 0.
 - **Prefab-variant ændrer sig ikke** -> du har rettet i scenen i stedet for i prefaben (Overrides -> Apply).
+
+## Færdige prefabs (allerede lavet)
+
+I `Assets/Prefabs/`: `Enemy_Shooter`, `Enemy_Dog`, `Enemy_Sniper` (med laser), `Enemy_Bomber`, `Enemy_Shield`, `Boss` (2 faser), `Grenade` og `ExplosiveBarrel`.
+I `Assets/Prefabs/Weapons/`: WeaponData til alle fjender og bossen samt `Player_Pistol`, `Player_Shotgun` og `Player_Knife` (træk dem ind i `WeaponHolder -> Start Weapons`).
+Tallene følger `Fjendetyper-boss-score.md`. Prefabs'ene er firkanter i forskellige farver, så skift sprite selv. Brug fx `Enemy_Shooter` som udgangspunkt for nye **Prefab Variants**.
+Tag `Enemy` og `Obstacle Layers = Walls` (layer 6) er allerede sat. Du skal stadig have en `ScoreManager` i scenen, hvis du vil have point.
