@@ -95,3 +95,20 @@ I `Assets/Prefabs/`: `Enemy_Shooter`, `Enemy_Dog`, `Enemy_Sniper` (med laser), `
 I `Assets/Prefabs/Weapons/`: WeaponData til alle fjender og bossen samt `Player_Pistol`, `Player_Shotgun` og `Player_Knife` (træk dem ind i `WeaponHolder -> Start Weapons`).
 Tallene følger `Fjendetyper-boss-score.md`. Prefabs'ene er firkanter i forskellige farver, så skift sprite selv. Brug fx `Enemy_Shooter` som udgangspunkt for nye **Prefab Variants**.
 Tag `Enemy` og `Obstacle Layers = Walls` (layer 6) er allerede sat. Du skal stadig have en `ScoreManager` i scenen, hvis du vil have point.
+
+## Lyd med tilfældig pitch (nyt)
+
+Alle lyd-felter er nu et `SoundEffect` i stedet for en rå lydfil: `clip` (lyden), `volume`, `Min Pitch` og `Max Pitch`.
+Hver gang lyden spilles, vælges en tilfældig pitch mellem min og max (våben: 0.9-1.1), så skud ikke lyder ens. Sæt Min = Max for ingen variation.
+Lyden spiller på sit eget midlertidige objekt, så den høres færdig, selvom fjenden, kuglen eller pickuppen er væk med det samme.
+
+Hvor kan man sætte lyd på:
+- `WeaponData -> Attack Sound`: skud og slag.
+- `Health -> Hurt Sound` og `Death Sound`: når noget rammes eller dør (spiller, fjender, boss, tønder).
+- `Pickup -> Pickup Sound`, `Door -> Open/Close/Locked Sound`, `Switch -> Switch Sound`, `Explosion -> Sound`, `Shield -> Block Sound`.
+
+## Pickup- og dør-prefabs
+
+`Pickup_Health`, `Pickup_Ammo`, `Pickup_Coin` (250), `Pickup_Gold` (1000), `Pickup_Key_Red`, `Pickup_Key_Blue`, `Pickup_Weapon_Shotgun` og `Pickup_Weapon_Knife`.
+`Door_Interact` (tryk E), `Door_Automatic`, `Door_Key_Red`, `Door_Key_Blue` (kræver nøgle med samme id) og `Door_Switch` (åbnes kun af en `Switch` eller et event).
+Dørene ligger på layer `Walls`, så fjender ikke ser igennem dem, og de glider 2 enheder til siden. Skal de glide op/ned, så ret `Slide Offset` til fx (0, 2).

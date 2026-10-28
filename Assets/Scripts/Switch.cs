@@ -34,7 +34,7 @@ public class Switch : MonoBehaviour
     [Header("Udseende (må gerne være tomme)")]
     public Sprite offSprite;
     public Sprite onSprite;
-    public AudioClip switchSound;
+    public SoundEffect switchSound;
 
     [Header("Events")]
     public UnityEvent onActivated;
@@ -181,9 +181,6 @@ public class Switch : MonoBehaviour
 
     void PlaySound()
     {
-        if (switchSound != null)
-        {
-            AudioSource.PlayClipAtPoint(switchSound, transform.position);
-        }
+        switchSound.Play(transform.position);
     }
 }

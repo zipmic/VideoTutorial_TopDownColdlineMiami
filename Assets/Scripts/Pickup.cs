@@ -30,7 +30,7 @@ public class Pickup : MonoBehaviour
     [Header("Effekter (må gerne være tomme)")]
     public float bobHeight = 0.05f;     // Svæver lidt op og ned
     public float bobSpeed = 3f;
-    public AudioClip pickupSound;
+    public SoundEffect pickupSound;
     public UnityEvent onPickedUp;
 
     private Vector3 startPosition;
@@ -95,10 +95,7 @@ public class Pickup : MonoBehaviour
 
         if (!Apply(player)) return;
 
-        if (pickupSound != null)
-        {
-            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-        }
+        pickupSound.Play(transform.position);
 
         onPickedUp.Invoke();
 

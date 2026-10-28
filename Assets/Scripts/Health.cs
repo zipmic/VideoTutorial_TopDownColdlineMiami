@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
     [Header("Når den bliver ramt")]
     public Color hitColor = Color.red;
     public float hitFlashTime = 0.1f;
+    public SoundEffect hurtSound;       // Lyd når den bliver ramt (men ikke dør)
 
     [Header("Når den dør")]
     public DeathAction deathAction = DeathAction.Destroy;
@@ -32,6 +33,7 @@ public class Health : MonoBehaviour
     public GameObject dropPrefab;       // Fx en Pickup (ammo, health...)
     [Range(0f, 1f)] public float dropChance = 1f;
     public bool restartSceneOnDeath = false; // Genstarter banen med det samme (brug på spilleren)
+    public SoundEffect deathSound;      // Lyd når den dør - spiller færdig selvom objektet fjernes
     public int scoreOnDeath = 0;        // Point (før combo) når den dør - kræver en ScoreManager i banen
 
     [Header("UI (må gerne være tom)")]
@@ -107,6 +109,7 @@ public class Health : MonoBehaviour
         }
 
         invincibleUntil = Time.time + invincibleTime;
+        hurtSound.Play(transform.position);
         onDamaged.Invoke();
 
         if (isActiveAndEnabled)
@@ -170,6 +173,7 @@ public class Health : MonoBehaviour
     {
         IsDead = true;
         StopEffect();
+        deathSound.Play(transform.position);
         onDeath.Invoke();
 
         if (scoreOnDeath > 0 && ScoreManager.Instance != null)

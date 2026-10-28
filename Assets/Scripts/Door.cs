@@ -51,9 +51,9 @@ public class Door : MonoBehaviour
     public bool startOpen = false;
 
     [Header("Lyd (må gerne være tomme)")]
-    public AudioClip openSound;
-    public AudioClip closeSound;
-    public AudioClip lockedSound;
+    public SoundEffect openSound;
+    public SoundEffect closeSound;
+    public SoundEffect lockedSound;
 
     [Header("Events")]
     public UnityEvent onOpened;
@@ -254,12 +254,9 @@ public class Door : MonoBehaviour
         foreach (Collider2D col in colliders) col.enabled = solid;
     }
 
-    void PlaySound(AudioClip clip)
+    void PlaySound(SoundEffect sound)
     {
-        if (clip != null)
-        {
-            AudioSource.PlayClipAtPoint(clip, transform.position);
-        }
+        sound.Play(transform.position);
     }
 
     void OnDrawGizmosSelected()

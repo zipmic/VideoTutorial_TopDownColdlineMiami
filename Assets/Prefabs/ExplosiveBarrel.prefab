@@ -201,7 +201,6 @@ MonoBehaviour:
   hurtsEveryone: 0
   effectPrefab: {fileID: 0}
   effectLifetime: 2
-  sound: {fileID: 0}
   noiseRadius: 15
   onExploded:
     m_PersistentCalls:

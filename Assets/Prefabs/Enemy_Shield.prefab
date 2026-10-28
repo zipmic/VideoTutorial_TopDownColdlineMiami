@@ -249,7 +249,6 @@ MonoBehaviour:
   blockAngle: 160
   blockEffectPrefab: {fileID: 0}
   effectLifetime: 1
-  blockSound: {fileID: 0}
   onBlocked:
     m_PersistentCalls:
       m_Calls: []

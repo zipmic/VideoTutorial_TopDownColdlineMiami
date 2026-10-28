@@ -16,7 +16,7 @@ public class Explosion : MonoBehaviour
     [Header("Effekter (må gerne være tomme)")]
     public GameObject effectPrefab;         // Fx en eksplosions-animation
     public float effectLifetime = 2f;
-    public AudioClip sound;
+    public SoundEffect sound;
     public float noiseRadius = 15f;         // Fjender inden for denne afstand hører det
     public UnityEvent onExploded;
 
@@ -62,10 +62,7 @@ public class Explosion : MonoBehaviour
             Destroy(effect, effectLifetime);
         }
 
-        if (sound != null)
-        {
-            AudioSource.PlayClipAtPoint(sound, position);
-        }
+        sound.Play(position);
 
         Noise.Make(position, noiseRadius, source);
         onExploded.Invoke();

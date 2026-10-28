@@ -10,7 +10,7 @@ public class Shield : MonoBehaviour
     [Header("Effekter (må gerne være tomme)")]
     public GameObject blockEffectPrefab;    // Fx gnister
     public float effectLifetime = 1f;
-    public AudioClip blockSound;
+    public SoundEffect blockSound;
     public UnityEvent onBlocked;
 
     private EnemyAI enemy;
@@ -49,10 +49,7 @@ public class Shield : MonoBehaviour
             Destroy(effect, effectLifetime);
         }
 
-        if (blockSound != null)
-        {
-            AudioSource.PlayClipAtPoint(blockSound, effectPosition);
-        }
+        blockSound.Play(effectPosition);
 
         onBlocked.Invoke();
     }

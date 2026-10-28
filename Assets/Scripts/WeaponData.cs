@@ -35,7 +35,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Støj og lyd")]
     public float noiseRadius = 10f;     // Fjender inden for denne afstand hører det (nærkamp: brug fx 3)
-    public AudioClip attackSound;
+    public SoundEffect attackSound = new SoundEffect { minPitch = 0.9f, maxPitch = 1.1f }; // Skud/slag-lyd. Pitch varierer tilfældigt
 
     // Skyder kuglerne. position = hvor de starter, aimAngle = retning i grader (0 = højre).
     // owner er den der skyder - kuglerne rammer ikke den, eller andre med samme tag.
@@ -118,10 +118,7 @@ public class WeaponData : ScriptableObject
 
     void PlayAttackEffects(Vector2 position, GameObject owner)
     {
-        if (attackSound != null)
-        {
-            AudioSource.PlayClipAtPoint(attackSound, position);
-        }
+        attackSound.Play(position);
 
         Noise.Make(position, noiseRadius, owner);
     }

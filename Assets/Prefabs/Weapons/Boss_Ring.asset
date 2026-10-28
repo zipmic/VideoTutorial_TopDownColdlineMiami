@@ -31,4 +31,8 @@ MonoBehaviour:
   meleeArc: 100
   swingTime: 0.15
   noiseRadius: 10
-  attackSound: {fileID: 0}
+  attackSound:
+    clip: {fileID: 0}
+    volume: 1
+    minPitch: 0.9
+    maxPitch: 1.1
