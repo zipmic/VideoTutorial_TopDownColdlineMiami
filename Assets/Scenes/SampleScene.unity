@@ -1482,38 +1482,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3470365765987069458, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1475989707528524760, guid: eee6b9d0f142645cbb2d5ce709c12cc2, type: 3}
-    - target: {fileID: 3470365765987069458, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470365765987069458, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470365765987069458, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1495140676}
-    - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: totalAmmo
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: magazineSize
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: shootInterval
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 6537065337226569008, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
       propertyPath: healthBar
       value: 
@@ -1522,20 +1494,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8598585184379772788, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: spriteLeft
-      value: 
-      objectReference: {fileID: 1475989707528524760, guid: eee6b9d0f142645cbb2d5ce709c12cc2, type: 3}
-    - target: {fileID: 8598585184379772788, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-      propertyPath: spriteRight
-      value: 
-      objectReference: {fileID: -4388899747337525858, guid: 04744bbc4adef470eba7d11e3e0e8e68, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5157907832801245537, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-    - {fileID: 1058169504595600142, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-    - {fileID: 3994722981467090903, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
-    - {fileID: 4280921407968056743, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
