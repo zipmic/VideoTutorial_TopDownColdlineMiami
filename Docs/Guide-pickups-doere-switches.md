@@ -36,7 +36,7 @@ Våbenskift: tallene 1-3 eller musehjulet. R genlader.
 ### Coin og Gold (`Pickup_Coin` 250 point, `Pickup_Gold` 1000 point)
 Er `Type = Score`. Giver `Amount` point.
 - Kræver en `ScoreManager` i banen (tomt GameObject). Uden den får du en advarsel i Console.
-- Pointene er faste og går ikke gennem combo-multiplikatoren.
+- Pointene er faste: de lægges direkte oveni scoren, ganges ikke med combo-multiplikatoren og starter eller forlænger heller ikke en combo. Kun drab giver combo.
 - ScoreManager tæller dem automatisk. Træk en TextMeshPro-tekst ind i `Collectibles Text`, så viser den "Fundet 2 / 5".
 - Lav egne: kopier prefaben, skift sprite, lyd og `Amount` (fx "Energidrik" 250, "Guldbarre" 1000).
 
