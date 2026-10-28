@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Start")]
     public bool startAsleep = false;
     public float wakeUpRadius = 2f;         // Vågner når spilleren kommer så tæt på (0 = kun af lyd/skade)
-    public float startFacingAngle = 0f;     // 0 = højre, 90 = op, 180 = venstre, 270 = ned
+    public float startFacingAngle = 0f;     // Ekstra drejning oveni. Normalt 0 - DREJ I STEDET fjenden (Z-rotation) i Scene-vinduet: 0 = højre, 90 = op, 180 = venstre, 270 = ned
 
     [Header("Syn")]
     public float viewDistance = 7f;         // Hvor langt fjenden kan se
@@ -108,7 +108,10 @@ public class EnemyAI : MonoBehaviour
         health = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        facingAngle = startFacingAngle;
+        // Den vej fjenden er drejet i Scene-vinduet er den vej den kigger. Selve objektet nulstilles, så grafikken ikke ligger skævt.
+        facingAngle = transform.eulerAngles.z + startFacingAngle;
+        transform.rotation = Quaternion.identity;
+        rb.rotation = 0f;
         state = startAsleep ? State.Sleeping : State.Patrol;
         currentAmmo = weapon != null ? weapon.magazineSize : 0;
 
@@ -520,7 +523,7 @@ public class EnemyAI : MonoBehaviour
     // Tegner synskegle, patrulje og rækkevidde i Scene-vinduet når fjenden er valgt
     void OnDrawGizmosSelected()
     {
-        float angle = Application.isPlaying ? facingAngle : startFacingAngle;
+        float angle = Application.isPlaying ? facingAngle : transform.eulerAngles.z + startFacingAngle;
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, closeRange);
