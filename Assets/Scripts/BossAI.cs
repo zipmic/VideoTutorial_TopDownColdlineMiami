@@ -80,6 +80,10 @@ public class BossAI : MonoBehaviour
     public Transform muzzle;                // Hvor aimed-skud starter. Hvis tom: lidt foran bossen
     public float bulletSpawnDistance = 1f;
     public Color telegraphColor = Color.yellow;
+    public Sprite spriteUp;                 // Grafik efter hvilken vej bossen kigger (tom = beholder den nuværende)
+    public Sprite spriteDown;
+    public Sprite spriteLeft;
+    public Sprite spriteRight;
     public GameObject healthBarRoot;        // Vises først når kampen starter
 
     [Header("Når den dør")]
@@ -177,6 +181,7 @@ public class BossAI : MonoBehaviour
 
         Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
         if (toPlayer.sqrMagnitude > 0.0001f) FacingDirection = toPlayer.normalized;
+        UpdateFacingSprite();
 
         if (busy) return; // Et angreb styrer bossen
 
@@ -187,6 +192,23 @@ public class BossAI : MonoBehaviour
         {
             StartNextAttack();
         }
+    }
+
+    void UpdateFacingSprite()
+    {
+        if (spriteRenderer == null) return;
+
+        Sprite newSprite;
+        if (Mathf.Abs(FacingDirection.x) > Mathf.Abs(FacingDirection.y))
+        {
+            newSprite = FacingDirection.x > 0 ? spriteRight : spriteLeft;
+        }
+        else
+        {
+            newSprite = FacingDirection.y > 0 ? spriteUp : spriteDown;
+        }
+
+        if (newSprite != null) spriteRenderer.sprite = newSprite;
     }
 
     void FixedUpdate()

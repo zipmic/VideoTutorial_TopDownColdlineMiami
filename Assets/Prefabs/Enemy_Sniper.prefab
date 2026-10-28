@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8cc73bb49c8dbf8bb80df024be53ab9c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a55229f21f218ddfbe469f31aaa06ef9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,6 +233,10 @@ MonoBehaviour:
   gunPivot: {fileID: 1094933833919775696}
   muzzle: {fileID: 210292302882881692}
   laser: {fileID: 514515727997449963}
+  spriteUp: {fileID: 21300000, guid: 70d51972177cbef35fe788a19a4af0a7, type: 3}
+  spriteDown: {fileID: 21300000, guid: f6d61bac32b59b78744681a372b9074f, type: 3}
+  spriteLeft: {fileID: 21300000, guid: b0e7968f1a785ed948af01fcbd5d8f90, type: 3}
+  spriteRight: {fileID: 21300000, guid: a55229f21f218ddfbe469f31aaa06ef9, type: 3}
   waypoints: []
   onSpotPlayer:
     m_PersistentCalls:

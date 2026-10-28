@@ -112,3 +112,10 @@ Hvor kan man sætte lyd på:
 `Pickup_Health`, `Pickup_Ammo`, `Pickup_Coin` (250), `Pickup_Gold` (1000), `Pickup_Key_Red`, `Pickup_Key_Blue`, `Pickup_Weapon_Shotgun` og `Pickup_Weapon_Knife`.
 `Door_Interact` (tryk E), `Door_Automatic`, `Door_Key_Red`, `Door_Key_Blue` (kræver nøgle med samme id) og `Door_Switch` (åbnes kun af en `Switch` eller et event).
 Dørene ligger på layer `Walls`, så fjender ikke ser igennem dem, og de glider 2 enheder til siden. Skal de glide op/ned, så ret `Slide Offset` til fx (0, 2).
+
+## Retnings-grafik på fjender og boss (nyt)
+
+Fjender og boss virker nu som spilleren: **karakteren skifter mellem 4 billeder** (op, ned, venstre, højre), og **våbnet kredser om** karakteren og peger mod målet.
+Sæt jeres egne billeder ind i `Sprite Up / Down / Left / Right` på `EnemyAI` (og `BossAI`). Er et felt tomt, beholdes det nuværende billede, så man kan nøjes med fx kun venstre og højre.
+Karakter-sprites ligger i `Assets/Sprites/Generated/` (fx `Enemy_Shooter_Left.png`). Brug samme stil som spillerens grafik, så ser alle ens ud.
+Hunden har også et gevær-billede på sit våben-objekt (`Gun` under prefaben). Slå SpriteRenderer fra, hvis den ikke skal have noget i "hånden".
