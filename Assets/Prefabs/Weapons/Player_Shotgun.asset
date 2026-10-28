@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847788f2d5d5f774ab21f82d6170942e, type: 3}
+  m_Name: Player_Shotgun
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  weaponName: Shotgun
+  weaponSprite: {fileID: 0}
+  isMelee: 0
+  automatic: 0
+  shootInterval: 0.8
+  damage: 1
+  bulletsPerShot: 6
+  spread: 12
+  bulletSpeed: 14
+  range: 7
+  bulletPrefab: {fileID: 8587052893493500997, guid: 47107e6e79e5844b59bbd57b1a392f1b, type: 3}
+  magazineSize: 2
+  startReserveAmmo: 12
+  maxReserveAmmo: 30
+  reloadTime: 1.5
+  meleeRange: 1.2
+  meleeArc: 100
+  swingTime: 0.15
+  noiseRadius: 14
+  attackSound: {fileID: 0}
