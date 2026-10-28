@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 474ce57d7c1704418af05d72d996ae5e
+guid: 331332a6b9596420f9cb0c215c206ed0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3684732902739343859
-    second: 2d-template_0
+      213: 6325031264858159479
+    second: Comprehensive Pixel Art Game Asset Sprite Sheet_0
+  - first:
+      213: -6286475141999643129
+    second: Comprehensive Pixel Art Game Asset Sprite Sheet_1
+  - first:
+      213: 4069386612062957515
+    second: Comprehensive Pixel Art Game Asset Sprite Sheet_2
+  - first:
+      213: 5075957109323284647
+    second: Comprehensive Pixel Art Game Asset Sprite Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2d-template_0
+      name: Comprehensive Pixel Art Game Asset Sprite Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1400
-        height: 400
+        y: 426
+        width: 1533
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +126,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f9f8ff6d0dc22330800000000000000
-      internalID: 3684732902739343859
+      spriteID: 7793c178c6607c750800000000000000
+      internalID: 6325031264858159479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comprehensive Pixel Art Game Asset Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 827
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706b9cf5a24f1c8a0800000000000000
+      internalID: -6286475141999643129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comprehensive Pixel Art Game Asset Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1524
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf2eb9209d597830800000000000000
+      internalID: 4069386612062957515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comprehensive Pixel Art Game Asset Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 425
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0455ce81c617640800000000000000
+      internalID: 5075957109323284647
       vertices: []
       indices: 
       edges: []
@@ -137,7 +212,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2d-template_0: 3684732902739343859
+      Comprehensive Pixel Art Game Asset Sprite Sheet_0: 6325031264858159479
+      Comprehensive Pixel Art Game Asset Sprite Sheet_1: -6286475141999643129
+      Comprehensive Pixel Art Game Asset Sprite Sheet_2: 4069386612062957515
+      Comprehensive Pixel Art Game Asset Sprite Sheet_3: 5075957109323284647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,665 @@
+fileFormatVersion: 2
+guid: 54cd726e97e6c49fcb607005cefcc77b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1166856199660737000
+    second: 20190429_180844_Unanchored Foliage_0
+  - first:
+      213: 8264166195434656777
+    second: 20190429_180844_Unanchored Foliage_1
+  - first:
+      213: 841958662294938957
+    second: 20190429_180844_Unanchored Foliage_2
+  - first:
+      213: -2400681354357482817
+    second: 20190429_180844_Unanchored Foliage_3
+  - first:
+      213: -7169541650075878579
+    second: 20190429_180844_Unanchored Foliage_4
+  - first:
+      213: -838187322215357450
+    second: 20190429_180844_Unanchored Foliage_5
+  - first:
+      213: 3831464048500875675
+    second: 20190429_180844_Unanchored Foliage_6
+  - first:
+      213: -4380225534099195544
+    second: 20190429_180844_Unanchored Foliage_7
+  - first:
+      213: 4075242961519457758
+    second: 20190429_180844_Unanchored Foliage_8
+  - first:
+      213: 9084765892965990232
+    second: 20190429_180844_Unanchored Foliage_9
+  - first:
+      213: 6982917409766590955
+    second: 20190429_180844_Unanchored Foliage_10
+  - first:
+      213: -368657547035528654
+    second: 20190429_180844_Unanchored Foliage_11
+  - first:
+      213: -1180719390011388435
+    second: 20190429_180844_Unanchored Foliage_12
+  - first:
+      213: 7263262660823921618
+    second: 20190429_180844_Unanchored Foliage_13
+  - first:
+      213: 3756721998681178295
+    second: 20190429_180844_Unanchored Foliage_14
+  - first:
+      213: -4925399312484496138
+    second: 20190429_180844_Unanchored Foliage_15
+  - first:
+      213: -3772982753736098631
+    second: 20190429_180844_Unanchored Foliage_16
+  - first:
+      213: -8792949382389771362
+    second: 20190429_180844_Unanchored Foliage_17
+  - first:
+      213: -513532592790644856
+    second: 20190429_180844_Unanchored Foliage_18
+  - first:
+      213: 9202822170707086450
+    second: 20190429_180844_Unanchored Foliage_19
+  - first:
+      213: -1726505923347658598
+    second: 20190429_180844_Unanchored Foliage_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 45
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e19db40881813010800000000000000
+      internalID: 1166856199660737000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 45
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9049cab8e5730b270800000000000000
+      internalID: 8264166195434656777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 45
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4527a541fc3fab00800000000000000
+      internalID: 841958662294938957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 45
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba5e9e07011faed0800000000000000
+      internalID: -2400681354357482817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 26
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bfbd8eadba08c90800000000000000
+      internalID: -7169541650075878579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 17
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f32e1442192e54f0800000000000000
+      internalID: -838187322215357450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 23
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91239c80481c2530800000000000000
+      internalID: 3831464048500875675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_7
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 10
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869fbeb85105633c0800000000000000
+      internalID: -4380225534099195544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 23
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed537c6c1eb2e8830800000000000000
+      internalID: 4075242961519457758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_9
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 25
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f72dd4272931e70800000000000000
+      internalID: 9084765892965990232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 25
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be94709136e48e060800000000000000
+      internalID: 6982917409766590955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 32
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2323e290ae342eaf0800000000000000
+      internalID: -368657547035528654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_12
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 30
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded84f278fd3d9fe0800000000000000
+      internalID: -1180719390011388435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 17
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3b4c858ea4cc460800000000000000
+      internalID: 7263262660823921618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_14
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 17
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0894bf0ce822430800000000000000
+      internalID: 3756721998681178295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_15
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 15
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc8862db6775abb0800000000000000
+      internalID: -4925399312484496138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_16
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 23
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc72e3fc2ca3abc0800000000000000
+      internalID: -3772982753736098631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_17
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93daaeaf1b29f580800000000000000
+      internalID: -8792949382389771362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_18
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 25
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887d022e3d09fd8f0800000000000000
+      internalID: -513532592790644856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_19
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 17
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cc510710ef6bf70800000000000000
+      internalID: 9202822170707086450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20190429_180844_Unanchored Foliage_20
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 18
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98414892083a08e0800000000000000
+      internalID: -1726505923347658598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      20190429_180844_Unanchored Foliage_0: 1166856199660737000
+      20190429_180844_Unanchored Foliage_1: 8264166195434656777
+      20190429_180844_Unanchored Foliage_10: 6982917409766590955
+      20190429_180844_Unanchored Foliage_11: -368657547035528654
+      20190429_180844_Unanchored Foliage_12: -1180719390011388435
+      20190429_180844_Unanchored Foliage_13: 7263262660823921618
+      20190429_180844_Unanchored Foliage_14: 3756721998681178295
+      20190429_180844_Unanchored Foliage_15: -4925399312484496138
+      20190429_180844_Unanchored Foliage_16: -3772982753736098631
+      20190429_180844_Unanchored Foliage_17: -8792949382389771362
+      20190429_180844_Unanchored Foliage_18: -513532592790644856
+      20190429_180844_Unanchored Foliage_19: 9202822170707086450
+      20190429_180844_Unanchored Foliage_2: 841958662294938957
+      20190429_180844_Unanchored Foliage_20: -1726505923347658598
+      20190429_180844_Unanchored Foliage_3: -2400681354357482817
+      20190429_180844_Unanchored Foliage_4: -7169541650075878579
+      20190429_180844_Unanchored Foliage_5: -838187322215357450
+      20190429_180844_Unanchored Foliage_6: 3831464048500875675
+      20190429_180844_Unanchored Foliage_7: -4380225534099195544
+      20190429_180844_Unanchored Foliage_8: 4075242961519457758
+      20190429_180844_Unanchored Foliage_9: 9084765892965990232
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
