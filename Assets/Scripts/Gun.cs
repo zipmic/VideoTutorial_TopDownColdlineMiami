@@ -15,11 +15,18 @@ public class Gun : MonoBehaviour
 
     [Header("Skud")]
     public float shootInterval = 0.15f; // Tid mellem hvert skud
+    public int bulletsPerShot = 1;      // Haglgevær: fx 5
+    public float spread = 0f;           // Tilfældig spredning i grader (haglgevær: fx 15)
 
     [Header("Ammo")]
     public int magazineSize = 12;      // Skud i et magasin
     public int totalAmmo = 60;         // Ekstra skud man har med
     public float reloadTime = 1.2f;
+
+    [Header("Lyd (må gerne være tom)")]
+    public AudioClip shootSound;
+    public float minPitch = 0.9f;       // Lyden er lidt forskellig hver gang
+    public float maxPitch = 1.1f;
 
     [Header("UI (må gerne være tom)")]
     public TextMeshProUGUI ammoText;
@@ -32,6 +39,19 @@ public class Gun : MonoBehaviour
     {
         currentAmmo = magazineSize;
         UpdateAmmoText();
+    }
+
+    // Når man skifter til dette våben
+    void OnEnable()
+    {
+        UpdateAmmoText();
+    }
+
+    // Når man skifter væk fra dette våben: stop en halvfærdig reload
+    void OnDisable()
+    {
+        StopAllCoroutines();
+        isReloading = false;
     }
 
     void Update()
@@ -76,22 +96,31 @@ public class Gun : MonoBehaviour
         // Hvis der ikke er sat et spawnpoint, skyder vi fra gun selv
         Transform firePoint = spawnPoint != null ? spawnPoint : transform;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
+        for (int i = 0; i < bulletsPerShot; i++)
         {
-            bulletScript.ownerTag = "Player";
-            bulletScript.owner = transform.parent != null ? transform.parent : transform; // Spilleren (gun er child af spilleren)
-            bulletScript.damage = damage;
+            // Tilfældig spredning (0 = helt præcis)
+            float randomAngle = Random.Range(-spread, spread);
+            Quaternion rotation = firePoint.rotation * Quaternion.Euler(0f, 0f, randomAngle);
+
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rotation);
+
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.ownerTag = "Player";
+                bulletScript.owner = transform.parent != null ? transform.parent : transform; // Spilleren (gun er child af spilleren)
+                bulletScript.damage = damage;
+            }
+
+            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+            if (bulletRb != null)
+            {
+                bulletRb.gravityScale = 0f;
+                bulletRb.linearVelocity = rotation * Vector3.right * bulletSpeed;
+            }
         }
 
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        if (bulletRb != null)
-        {
-            bulletRb.gravityScale = 0f;
-            bulletRb.linearVelocity = firePoint.right * bulletSpeed;
-        }
+        SoundPlayer.Play(shootSound, firePoint.position, minPitch, maxPitch);
 
         currentAmmo--;
         shootTimer = shootInterval;

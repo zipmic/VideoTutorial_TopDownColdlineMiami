@@ -64,32 +64,24 @@ public class Bullet : MonoBehaviour
         // Ignorér lag vi ikke skal ramme
         if ((hitLayers.value & (1 << other.gameObject.layer)) == 0) return false;
 
-        // Ignorér triggers (pickups, trykplader...) - undtagen hvis de kan tage skade
-        Health health = other.GetComponentInParent<Health>();
-        if (other.isTrigger && health == null) return false;
+        // Ignorér triggers (pickups, nøgler...) - men ikke spiller og fjender
+        if (other.isTrigger && other.GetComponentInParent<PlayerHealth>() == null && other.GetComponentInParent<Enemy>() == null) return false;
 
         hasHit = true;
         Debug.Log("Bullet ramte: " + other.name);
 
-        if (health != null)
+        // Ramte vi spilleren?
+        PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            // Spiller, fjende, kasse... alt med Health
-            health.TakeDamage(damage, transform.position);
+            playerHealth.TakeDamage(damage);
         }
-        else
-        {
-            // De gamle scripts (PlayerHealth / Enemy) virker stadig
-            PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
 
-            Enemy enemy = other.GetComponentInParent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+        // Ramte vi en fjende?
+        Enemy enemy = other.GetComponentInParent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
         }
 
         Destroy(gameObject);

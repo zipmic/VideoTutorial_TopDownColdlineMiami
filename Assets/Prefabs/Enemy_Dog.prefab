@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 555149796570436048}
   - component: {fileID: 556435449648424831}
   - component: {fileID: 153413618586864634}
-  - component: {fileID: 24947195458274335}
   - component: {fileID: 737612912920799913}
   m_Layer: 0
   m_Name: Enemy_Dog
@@ -169,46 +168,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &24947195458274335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044691284844557955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901a53d62c02f1b4b90349293cbb41cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 1
-  invincibleTime: 0
-  blinkInterval: 0.08
-  hitColor: {r: 1, g: 1, b: 1, a: 1}
-  hitFlashTime: 0.1
-  hurtSound:
-    clip: {fileID: 0}
-    volume: 1
-    minPitch: 0.95
-    maxPitch: 1.05
-  deathAction: 0
-  deathPrefab: {fileID: 0}
-  dropPrefab: {fileID: 0}
-  dropChance: 1
-  restartSceneOnDeath: 0
-  deathSound:
-    clip: {fileID: 0}
-    volume: 1
-    minPitch: 0.95
-    maxPitch: 1.05
-  scoreOnDeath: 100
-  healthBar: {fileID: 0}
-  onDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &737612912920799913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,46 +177,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044691284844557955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d81807a95044b489973ccfc370c024, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c21b3bc9e0f24fc28f3b5bb1381b275, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  startAsleep: 0
-  wakeUpRadius: 2
-  startFacingAngle: 0
-  viewDistance: 8
-  viewAngle: 120
-  closeRange: 1.5
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 1
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitFlashTime: 0.1
+  detectionRange: 7
+  loseSightRange: 10
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
-  canHear: 1
-  hearingMultiplier: 1
-  patrolSpeed: 2.5
-  chaseSpeed: 6.5
-  turnSpeed: 720
-  waypoints: []
-  waitAtWaypoint: 1
-  searchTime: 3
-  weapon: {fileID: 11400000, guid: fb1f86b84154b8841f12a8bba47dd279, type: 2}
-  attackRange: 1.2
-  stopDistance: 0.5
-  reactionTime: 0.1
-  aimTolerance: 40
-  extraSpread: 0
-  chargeTime: 0
-  retreatDistance: 0
-  alertOthers: 1
-  alertRadius: 8
-  gunPivot: {fileID: 0}
-  muzzle: {fileID: 0}
-  distanceFromEnemy: 0.7
-  spottedIcon: {fileID: 0}
-  suspiciousIcon: {fileID: 0}
-  laser: {fileID: 0}
+  chaseSpeed: 6
+  stopDistance: 0
   spriteUp: {fileID: 21300000, guid: 639dcbaa65c05e8c8f382c71d9a842d0, type: 3}
   spriteDown: {fileID: 21300000, guid: 2d2456cb5fd9c036807462d4020f7790, type: 3}
   spriteLeft: {fileID: 21300000, guid: ad5bbe1e628a2a3c70012dfd1b6dfc41, type: 3}
   spriteRight: {fileID: 21300000, guid: f6e740be7d538764ffb618eac9372c49, type: 3}
-  onSpotPlayer:
-    m_PersistentCalls:
-      m_Calls: []
+  deathSound: {fileID: 0}
+  player: {fileID: 0}
+  canSeePlayer: 0

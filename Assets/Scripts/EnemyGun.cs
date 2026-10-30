@@ -21,6 +21,11 @@ public class EnemyGun : MonoBehaviour
     public int damage = 1;
     public float spread = 5f;           // Tilfældig spredning i grader (0 = helt præcis)
 
+    [Header("Lyd (må gerne være tom)")]
+    public AudioClip shootSound;
+    public float minPitch = 0.9f;
+    public float maxPitch = 1.1f;
+
     [Header("Skud")]
     public float shootInterval = 0.4f;
     public int magazineSize = 6;
@@ -131,6 +136,8 @@ public class EnemyGun : MonoBehaviour
             bulletRb.gravityScale = 0f;
             bulletRb.linearVelocity = rotation * Vector3.right * bulletSpeed;
         }
+
+        SoundPlayer.Play(shootSound, firePoint.position, minPitch, maxPitch);
 
         currentAmmo--;
         shootTimer = shootInterval;

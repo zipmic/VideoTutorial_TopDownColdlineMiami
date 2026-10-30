@@ -139,17 +139,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 864454886478081575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18d9207de961e74b8a5fc5271cabd20, type: 3}
+  m_Script: {fileID: 11500000, guid: 23f4c2b622bcf6a76874bdfbaa63aaf8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  type: 1
-  amount: 12
-  weapon: {fileID: 0}
-  keyId: red
-  onlyWhenNeeded: 1
-  respawnTime: 0
-  bobHeight: 0.05
-  bobSpeed: 3
-  onPickedUp:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: Assembly-CSharp::AmmoPickup
+  ammoAmount: 20
+  pickupSound: {fileID: 0}

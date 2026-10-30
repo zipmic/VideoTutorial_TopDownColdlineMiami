@@ -21,6 +21,15 @@ public class Enemy : MonoBehaviour
     public float chaseSpeed = 0f;
     public float stopDistance = 3f;     // Fjenden stopper når den er så tæt på
 
+    [Header("Sprites (må gerne være tomme)")]
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteLeft;
+    public Sprite spriteRight;
+
+    [Header("Lyd (må gerne være tom)")]
+    public AudioClip deathSound;
+
     // Andre scripts (fx EnemyGun) kan læse disse
     [HideInInspector] public Transform player;
     [HideInInspector] public bool canSeePlayer = false;
@@ -58,6 +67,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         canSeePlayer = CheckCanSeePlayer();
+        UpdateSprite();
     }
 
     void FixedUpdate()
@@ -77,6 +87,31 @@ public class Enemy : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    void UpdateSprite()
+    {
+        // Fjenden kigger kun en ny vej når den kan se spilleren
+        if (spriteRenderer == null || !canSeePlayer) return;
+
+        Vector2 toPlayer = player.position - transform.position;
+        Sprite newSprite;
+
+        // Vælg sprite ud fra den retning der "fylder mest"
+        if (Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
+        {
+            newSprite = toPlayer.x > 0 ? spriteRight : spriteLeft;
+        }
+        else
+        {
+            newSprite = toPlayer.y > 0 ? spriteUp : spriteDown;
+        }
+
+        // Null check: hvis der ikke er sat grafik ind, beholder vi den nuværende
+        if (newSprite != null)
+        {
+            spriteRenderer.sprite = newSprite;
         }
     }
 
@@ -124,6 +159,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        SoundPlayer.Play(deathSound, transform.position);
         Destroy(gameObject);
     }
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 352491198675305783}
   - component: {fileID: 524671957366173752}
   - component: {fileID: 556476182639330586}
-  - component: {fileID: 477694729433501249}
   - component: {fileID: 710825243358788236}
   m_Layer: 0
   m_Name: Enemy_Shooter
@@ -170,36 +169,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &477694729433501249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012212968799748337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901a53d62c02f1b4b90349293cbb41cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 3
-  invincibleTime: 0
-  blinkInterval: 0.08
-  hitColor: {r: 1, g: 1, b: 1, a: 1}
-  hitFlashTime: 0.1
-  deathAction: 0
-  deathPrefab: {fileID: 0}
-  dropPrefab: {fileID: 0}
-  dropChance: 1
-  restartSceneOnDeath: 0
-  scoreOnDeath: 150
-  healthBar: {fileID: 0}
-  onDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &710825243358788236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,34 +178,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012212968799748337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d81807a95044b489973ccfc370c024, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c21b3bc9e0f24fc28f3b5bb1381b275, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  viewDistance: 7
-  viewAngle: 90
-  patrolSpeed: 1.5
-  chaseSpeed: 3.5
-  attackRange: 6
-  stopDistance: 3
-  reactionTime: 0.4
-  startAsleep: 0
-  wakeUpRadius: 2
-  startFacingAngle: 0
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 3
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitFlashTime: 0.1
+  detectionRange: 6
+  loseSightRange: 8
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
-  weapon: {fileID: 11400000, guid: d520b80683cb8b017c80bef46991cd60, type: 2}
-  gunPivot: {fileID: 111271126701059380}
-  muzzle: {fileID: 119501314087230590}
-  laser: {fileID: 0}
+  chaseSpeed: 2
+  stopDistance: 3
   spriteUp: {fileID: 21300000, guid: d6fb972059468528c190f80f62ea0043, type: 3}
   spriteDown: {fileID: 21300000, guid: 529c1aeb5b0d2e6979eee06d1eddcf2f, type: 3}
   spriteLeft: {fileID: 21300000, guid: c9cb805467a448de5a71805f26c85494, type: 3}
   spriteRight: {fileID: 21300000, guid: 07e314c8579fd9977bac23ebfcf750ba, type: 3}
-  waypoints: []
-  onSpotPlayer:
-    m_PersistentCalls:
-      m_Calls: []
+  deathSound: {fileID: 0}
+  player: {fileID: 0}
+  canSeePlayer: 0
 --- !u!1 &883084879978972347
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111271126701059380}
   - component: {fileID: 1042490996421336327}
+  - component: {fileID: 987517771642241782}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -330,6 +292,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &987517771642241782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883084879978972347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc05794c6701408ab4c43fb7fd03dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyGun
+  enemy: {fileID: 710825243358788236}
+  distanceFromEnemy: 0.7
+  turnSpeed: 270
+  aimTolerance: 10
+  reactionTime: 0.4
+  bulletPrefab: {fileID: 8587052893493500997, guid: 47107e6e79e5844b59bbd57b1a392f1b, type: 3}
+  spawnPoint: {fileID: 119501314087230590}
+  bulletSpeed: 10
+  damage: 1
+  spread: 5
+  shootSound: {fileID: 0}
+  minPitch: 0.9
+  maxPitch: 1.1
+  shootInterval: 0.4
+  magazineSize: 6
+  reloadTime: 1.5
 --- !u!1 &26103958471125411
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 119501314087230590}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
