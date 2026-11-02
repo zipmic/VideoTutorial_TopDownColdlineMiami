@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
     public int magazineSize = 12;      // Skud i et magasin
     public int totalAmmo = 60;         // Ekstra skud man har med
     public float reloadTime = 1.2f;
+    public string ammoType = "";       // Fx "pistol" eller "shotgun". Ammo-kasser med samme type passer til denne gun
 
     [Header("Lyd (må gerne være tom)")]
     public AudioClip shootSound;
@@ -154,7 +155,8 @@ public class Gun : MonoBehaviour
 
     void UpdateAmmoText()
     {
-        if (ammoText == null) return;
+        // Slukkede våben deler tekst med det man holder - de må ikke overskrive den
+        if (ammoText == null || !gameObject.activeInHierarchy) return;
 
         ammoText.text = currentAmmo + " / " + totalAmmo;
     }
