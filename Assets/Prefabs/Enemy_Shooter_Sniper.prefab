@@ -118,7 +118,7 @@ MonoBehaviour:
   damage: 2
   bulletsPerShot: 1
   spread: 15
-  shootSound: {fileID: 8300000, guid: 90668489fe19f5c4796cfb8bef30e196, type: 3}
+  shootSound: {fileID: 8300000, guid: aff6705feff639a49bda00bd4b146749, type: 3}
   minPitch: 0.9
   maxPitch: 1.1
   shootInterval: 2
@@ -439,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 5878409531588708973}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.874, y: 0.052, z: 0}
+  m_LocalPosition: {x: 1.105, y: 0.077, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
