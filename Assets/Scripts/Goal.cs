@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 // Kræver: en Collider2D med "Is Trigger" slået til.
 // Når spilleren rører målet, skiftes der til banen med navnet i "Next Scene".
 // Banen skal være tilføjet i File > Build Profiles > Scene List (eller Build Settings).
+[RequireComponent(typeof(Collider2D))]
 public class Goal : MonoBehaviour
 {
     public string nextScene;
