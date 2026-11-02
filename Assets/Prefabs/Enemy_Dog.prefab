@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f6e740be7d538764ffb618eac9372c49, type: 3}
+  m_Sprite: {fileID: -6325905571358827181, guid: 194ff04d61f4f4826933beb49cf3d5f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -160,13 +160,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.84375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.84375}
   m_EdgeRadius: 0
 --- !u!114 &737612912920799913
 MonoBehaviour:
@@ -190,10 +190,10 @@ MonoBehaviour:
     m_Bits: 64
   chaseSpeed: 6
   stopDistance: 0
-  spriteUp: {fileID: 21300000, guid: 639dcbaa65c05e8c8f382c71d9a842d0, type: 3}
-  spriteDown: {fileID: 21300000, guid: 2d2456cb5fd9c036807462d4020f7790, type: 3}
-  spriteLeft: {fileID: 21300000, guid: ad5bbe1e628a2a3c70012dfd1b6dfc41, type: 3}
-  spriteRight: {fileID: 21300000, guid: f6e740be7d538764ffb618eac9372c49, type: 3}
+  spriteUp: {fileID: 0}
+  spriteDown: {fileID: 0}
+  spriteLeft: {fileID: 0}
+  spriteRight: {fileID: 0}
   deathSound: {fileID: 0}
   player: {fileID: 0}
   canSeePlayer: 0

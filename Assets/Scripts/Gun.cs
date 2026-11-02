@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
 
     [Header("Lyd (må gerne være tom)")]
     public AudioClip shootSound;
+    public AudioClip reloadSound;       // Spilles når man begynder at reloade
     public float minPitch = 0.9f;       // Lyden er lidt forskellig hver gang
     public float maxPitch = 1.1f;
 
@@ -130,6 +131,8 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+
+        SoundPlayer.Play(reloadSound, transform.position, 1f, 1f);
 
         if (ammoText != null)
         {
