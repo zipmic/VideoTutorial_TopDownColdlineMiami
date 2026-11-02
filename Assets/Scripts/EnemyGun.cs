@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -5,149 +6,219 @@ using UnityEngine;
 // Gun drejer rundt om fjenden mod spilleren og skyder når den sigter rigtigt.
 public class EnemyGun : MonoBehaviour
 {
-    [Header("Placering")]
-    public Enemy enemy;                 // Hvis tom, findes den på parent
-    public float distanceFromEnemy = 0.7f;
+	[Header("Placering")]
+	public Enemy enemy;
+	public float distanceFromEnemy = 0.7f;
 
-    [Header("Sigte")]
-    public float turnSpeed = 270f;      // Grader i sekundet gun kan dreje
-    public float aimTolerance = 10f;    // Hvor præcist den skal sigte før den skyder (grader)
-    public float reactionTime = 0.4f;   // Ventetid fra den ser dig til første skud
+	[Header("Sigte")]
+	public float turnSpeed = 270f;
+	public float aimTolerance = 10f;
+	public float reactionTime = 0.4f;
 
-    [Header("Bullet")]
-    public GameObject bulletPrefab;
-    public Transform spawnPoint;
-    public float bulletSpeed = 10f;
-    public int damage = 1;
-    public float spread = 5f;           // Tilfældig spredning i grader (0 = helt præcis)
+	[Header("Bullet")]
+	public GameObject bulletPrefab;
+	public Transform spawnPoint;
+	public float bulletSpeed = 10f;
+	public int damage = 1;
 
-    [Header("Lyd (må gerne være tom)")]
-    public AudioClip shootSound;
-    public float minPitch = 0.9f;
-    public float maxPitch = 1.1f;
+	[Min(1)]
+	public int bulletsPerShot = 1;
 
-    [Header("Skud")]
-    public float shootInterval = 0.4f;
-    public int magazineSize = 6;
-    public float reloadTime = 1.5f;     // Fjenden har uendeligt ammo, men skal lade om
+	[Range(0f, 180f)]
+	public float spread = 30f;
 
-    private float currentAngle = 0f;
-    private float shootTimer = 0f;
-    private float reactionTimer = 0f;
-    private int currentAmmo;
-    private bool isReloading = false;
-    private Vector3 startScale;
+	[Header("Lyd (må gerne være tom)")]
+	public AudioClip shootSound;
+	public float minPitch = 0.9f;
+	public float maxPitch = 1.1f;
 
-    void Start()
-    {
-        if (enemy == null)
-        {
-            enemy = GetComponentInParent<Enemy>();
-        }
+	[Header("Skud")]
+	public float shootInterval = 0.4f;
+	public int magazineSize = 6;
+	public float reloadTime = 1.5f;
 
-        startScale = transform.localScale;
-        currentAmmo = magazineSize;
-    }
+	private float currentAngle = 0f;
+	private float shootTimer = 0f;
+	private float reactionTimer = 0f;
+	private int currentAmmo;
+	private bool isReloading = false;
+	private Vector3 startScale;
 
-    void Update()
-    {
-        if (enemy == null) return;
+	void Start()
+	{
+		if (enemy == null)
+		{
+			enemy = GetComponentInParent<Enemy>();
+		}
 
-        if (shootTimer > 0f)
-        {
-            shootTimer -= Time.deltaTime;
-        }
+		startScale = transform.localScale;
+		currentAmmo = magazineSize;
+	}
 
-        if (enemy.canSeePlayer)
-        {
-            // Drej langsomt mod spilleren
-            Vector2 toPlayer = enemy.player.position - enemy.transform.position;
-            float targetAngle = Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg;
-            currentAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, turnSpeed * Time.deltaTime);
+	void Update()
+	{
+		if (enemy == null) return;
 
-            reactionTimer += Time.deltaTime;
+		if (shootTimer > 0f)
+		{
+			shootTimer -= Time.deltaTime;
+		}
 
-            // Skyd hvis vi sigter nogenlunde rigtigt og har reageret
-            bool isAimed = Mathf.Abs(Mathf.DeltaAngle(currentAngle, targetAngle)) <= aimTolerance;
-            if (isAimed && reactionTimer >= reactionTime)
-            {
-                TryShoot();
-            }
-        }
-        else
-        {
-            // Mister den dig, skal den reagere igen næste gang
-            reactionTimer = 0f;
-        }
+		if (enemy.canSeePlayer)
+		{
+			// Drej langsomt mod spilleren
+			Vector2 toPlayer =
+				enemy.player.position - enemy.transform.position;
 
-        UpdateGunTransform();
-    }
+			float targetAngle =
+				Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg;
 
-    void UpdateGunTransform()
-    {
-        Vector2 direction = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad));
+			currentAngle = Mathf.MoveTowardsAngle(
+				currentAngle,
+				targetAngle,
+				turnSpeed * Time.deltaTime
+			);
 
-        // Placér gun rundt om fjenden
-        transform.position = enemy.transform.position + (Vector3)(direction * distanceFromEnemy);
-        transform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+			reactionTimer += Time.deltaTime;
 
-        // Vend gun på venstre side, så den ikke står på hovedet
-        Vector3 scale = startScale;
-        scale.y = direction.x < 0 ? -Mathf.Abs(startScale.y) : Mathf.Abs(startScale.y);
-        transform.localScale = scale;
-    }
+			// Skyd hvis vi sigter nogenlunde rigtigt
+			bool isAimed =
+				Mathf.Abs(Mathf.DeltaAngle(
+					currentAngle,
+					targetAngle
+				)) <= aimTolerance;
 
-    void TryShoot()
-    {
-        if (isReloading || shootTimer > 0f) return;
+			if (isAimed && reactionTimer >= reactionTime)
+			{
+				TryShoot();
+			}
+		}
+		else
+		{
+			// Mister den spilleren, skal den reagere igen
+			reactionTimer = 0f;
+		}
 
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
+		UpdateGunTransform();
+	}
 
-        Shoot();
-    }
+	void UpdateGunTransform()
+	{
+		Vector2 direction = new Vector2(
+			Mathf.Cos(currentAngle * Mathf.Deg2Rad),
+			Mathf.Sin(currentAngle * Mathf.Deg2Rad)
+		);
 
-    void Shoot()
-    {
-        if (bulletPrefab == null) return;
+		// Placér gun rundt om fjenden
+		transform.position =
+			enemy.transform.position +
+			(Vector3)(direction * distanceFromEnemy);
 
-        Transform firePoint = spawnPoint != null ? spawnPoint : transform;
+		transform.rotation =
+			Quaternion.Euler(0f, 0f, currentAngle);
 
-        // Tilfældig spredning så fjenden ikke rammer perfekt hver gang
-        float randomAngle = Random.Range(-spread, spread);
-        Quaternion rotation = firePoint.rotation * Quaternion.Euler(0f, 0f, randomAngle);
+		// Vend gun på venstre side
+		Vector3 scale = startScale;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rotation);
+		scale.y = direction.x < 0
+			? -Mathf.Abs(startScale.y)
+			: Mathf.Abs(startScale.y);
 
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.ownerTag = enemy.tag;
-            bulletScript.owner = enemy.transform;
-            bulletScript.damage = damage;
-        }
+		transform.localScale = scale;
+	}
 
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        if (bulletRb != null)
-        {
-            bulletRb.gravityScale = 0f;
-            bulletRb.linearVelocity = rotation * Vector3.right * bulletSpeed;
-        }
+	void TryShoot()
+	{
+		if (isReloading || shootTimer > 0f) return;
 
-        SoundPlayer.Play(shootSound, firePoint.position, minPitch, maxPitch);
+		if (currentAmmo <= 0)
+		{
+			StartCoroutine(Reload());
+			return;
+		}
 
-        currentAmmo--;
-        shootTimer = shootInterval;
-    }
+		Shoot();
+	}
 
-    IEnumerator Reload()
-    {
-        isReloading = true;
-        yield return new WaitForSeconds(reloadTime);
-        currentAmmo = magazineSize;
-        isReloading = false;
-    }
+	void Shoot()
+	{
+		if (bulletPrefab == null) return;
+
+		Transform firePoint =
+			spawnPoint != null ? spawnPoint : transform;
+
+		int bulletCount = Mathf.Max(1, bulletsPerShot);
+
+		// Skyd alle bullets samtidig
+		for (int i = 0; i < bulletCount; i++)
+		{
+			float angleOffset = 0f;
+
+			// Fordel bullets ligeligt over spread
+			if (bulletCount > 1)
+			{
+				float step = spread / (bulletCount - 1);
+
+				angleOffset =
+					-spread / 2f + step * i;
+			}
+
+			Quaternion rotation =
+				firePoint.rotation *
+				Quaternion.Euler(0f, 0f, angleOffset);
+
+			// Opret bullet
+			GameObject bullet = Instantiate(
+				bulletPrefab,
+				firePoint.position,
+				rotation
+			);
+
+			// Sæt damage og ejerskab
+			Bullet bulletScript =
+				bullet.GetComponent<Bullet>();
+
+			if (bulletScript != null)
+			{
+				bulletScript.ownerTag = enemy.tag;
+				bulletScript.owner = enemy.transform;
+				bulletScript.damage = damage;
+			}
+
+			// Giv bullet hastighed
+			Rigidbody2D bulletRb =
+				bullet.GetComponent<Rigidbody2D>();
+
+			if (bulletRb != null)
+			{
+				bulletRb.gravityScale = 0f;
+
+				bulletRb.linearVelocity =
+					rotation * Vector3.right * bulletSpeed;
+			}
+		}
+
+		// Afspil kun én lyd pr. affyring
+		SoundPlayer.Play(
+			shootSound,
+			firePoint.position,
+			minPitch,
+			maxPitch
+		);
+
+		// Bruger kun ét skud fra magasinet
+		currentAmmo--;
+
+		shootTimer = shootInterval;
+	}
+
+	IEnumerator Reload()
+	{
+		isReloading = true;
+
+		yield return new WaitForSeconds(reloadTime);
+
+		currentAmmo = magazineSize;
+		isReloading = false;
+	}
 }
