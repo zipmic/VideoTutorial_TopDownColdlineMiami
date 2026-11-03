@@ -442,6 +442,6 @@ MonoBehaviour:
   spriteDown: {fileID: 0}
   spriteLeft: {fileID: 0}
   spriteRight: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: d8f7fbdf3614f9447afe6a051fa92ba6, type: 3}
   player: {fileID: 0}
   canSeePlayer: 0

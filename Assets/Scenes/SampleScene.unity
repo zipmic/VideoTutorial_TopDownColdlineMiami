@@ -4420,30 +4420,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Shooter_Sniper
       objectReference: {fileID: 0}
-    - target: {fileID: 865097550796029762, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 865097550796029762, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: aimTolerance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577541939214532263, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: maxHealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577541939214532263, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: chaseSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577541939214532263, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: detectionRange
-      value: 17.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577541939214532263, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
-      propertyPath: loseSightRange
-      value: 22.09
-      objectReference: {fileID: 0}
     - target: {fileID: 7085884341170030087, guid: 04be5afb864b1e34db92da8c997543ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.33
@@ -6741,6 +6717,10 @@ PrefabInstance:
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 8300000, guid: 90668489fe19f5c4796cfb8bef30e196, type: 3}
+    - target: {fileID: 922177189217793590, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0877a340dce245a418d8bc0df8e95a17, type: 3}
     - target: {fileID: 1066676321349247585, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
       propertyPath: ammoText
       value: 
@@ -6768,7 +6748,7 @@ PrefabInstance:
     - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
       propertyPath: reloadSound
       value: 
-      objectReference: {fileID: 8300000, guid: 90668489fe19f5c4796cfb8bef30e196, type: 3}
+      objectReference: {fileID: 8300000, guid: da55eedba7b2e99479f90c7fc957f9b0, type: 3}
     - target: {fileID: 3801499907586299515, guid: c71f03e1ac0fc414d952f0b7a7f13c9a, type: 3}
       propertyPath: magazineSize
       value: 8
